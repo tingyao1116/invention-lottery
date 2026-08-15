@@ -45,7 +45,7 @@
 
       <details class="idea-bank">
         <summary>編輯抽籤內容</summary>
-        <p>以「每行一個項目」輸入，完成後按下儲存。</p>
+        <p>可直接以「每行一個項目」編輯；也可匯入 CSV 或文字檔。</p>
         <div class="edit-grid">
           <label>對象<textarea id="person-input" rows="7"></textarea></label>
           <label>地點<textarea id="place-input" rows="7"></textarea></label>
@@ -53,8 +53,11 @@
         </div>
         <div class="edit-actions">
           <button id="save-button" class="small-button" type="button">儲存自訂內容</button>
+          <label class="import-button" for="import-file">匯入題庫檔案</label>
+          <input id="import-file" type="file" accept=".csv,.txt,text/csv,text/plain" hidden />
           <button id="reset-button" class="text-button" type="button">還原預設內容</button>
         </div>
+        <p class="import-note">CSV 第一列請填：<code>對象,地點,生活情境</code>（每列可填其中一欄）。文字檔則以「對象：」「地點：」「生活情境：」分段。</p>
       </details>
     </main>
     <script src="script.js"></script>

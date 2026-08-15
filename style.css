@@ -54,8 +54,11 @@ summary { cursor: pointer; font-weight: 900; color: #59697c; }
 label { font-weight: 700; font-size: .9rem; }
 textarea { width: 100%; margin-top: 6px; padding: 9px; resize: vertical; border: 2px solid #aeb9c5; border-radius: 8px; color: var(--ink); font: .9rem/1.5 "Noto Sans TC", sans-serif; }
 .edit-actions { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
-.small-button, .text-button { cursor: pointer; font: 700 .9rem "Noto Sans TC", sans-serif; }
-.small-button { border: 0; border-radius: 8px; padding: 9px 15px; background: var(--ink); color: white; }
+.small-button, .text-button, .import-button { cursor: pointer; font: 700 .9rem "Noto Sans TC", sans-serif; }
+.small-button, .import-button { border: 0; border-radius: 8px; padding: 9px 15px; background: var(--ink); color: white; }
+.import-button { background: #51816f; }
 .text-button { border: 0; background: transparent; color: #59697c; text-decoration: underline; }
+.import-note { margin: 12px 0 0; color: #59697c; font-size: .78rem; line-height: 1.7; }
+code { padding: 1px 4px; border-radius: 3px; background: #e7ece8; }
 
 @media (max-width: 650px) { .app-shell { padding-top: 36px; } .cards, .edit-grid { grid-template-columns: 1fr; } .cards { margin-top: 30px; } .draw-card { min-height: 145px; } }
