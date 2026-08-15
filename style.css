@@ -1,0 +1,61 @@
+:root {
+  --ink: #243653;
+  --paper: #fffdf6;
+  --yellow: #ffd64e;
+  --pink: #ff9db6;
+  --mint: #a6e5cd;
+  --blue: #96cdf5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: radial-gradient(circle at 8% 12%, #fddc71 0 8px, transparent 9px), radial-gradient(circle at 88% 14%, #f6a8bd 0 12px, transparent 13px), #f5f0df;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.app-shell { width: min(1060px, calc(100% - 32px)); margin: 0 auto; padding: 54px 0 42px; text-align: center; }
+header { max-width: 760px; margin: auto; }
+.eyebrow { margin: 0; letter-spacing: .16em; font-size: .72rem; font-weight: 900; color: #d36583; }
+h1 { margin: 7px 0 12px; font-family: "Kosugi Maru", sans-serif; font-size: clamp(2rem, 5vw, 3.45rem); letter-spacing: .04em; }
+h1 span { color: #f2a900; }
+.intro { margin: 0; line-height: 1.8; font-size: 1.02rem; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 42px 0 28px; }
+.draw-card { min-height: 220px; padding: 25px 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 3px solid var(--ink); border-radius: 23px; box-shadow: 7px 7px 0 var(--ink); transition: transform .18s ease, background-color .18s ease; }
+.draw-card.person { background: var(--pink); }
+.draw-card.place { background: var(--blue); }
+.draw-card.situation { background: var(--mint); }
+.draw-card p { margin: 10px 0 8px; font-weight: 900; font-size: .93rem; letter-spacing: .13em; }
+.draw-card h2 { margin: 0; font-family: "Kosugi Maru", sans-serif; font-size: clamp(1.3rem, 2.3vw, 1.75rem); line-height: 1.5; }
+.card-icon { font-size: 2.4rem; }
+.draw-card.is-drawing { transform: translate(4px, 4px) rotate(-1deg); box-shadow: 3px 3px 0 var(--ink); animation: wobble .12s linear infinite alternate; }
+@keyframes wobble { to { transform: translate(-3px, -2px) rotate(1deg); } }
+
+#draw-button { cursor: pointer; border: 3px solid var(--ink); border-radius: 99px; padding: 15px 38px; color: var(--ink); background: var(--yellow); box-shadow: 5px 5px 0 var(--ink); font: 900 1.2rem "Noto Sans TC", sans-serif; transition: transform .12s, box-shadow .12s; }
+#draw-button:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+#draw-button:active { transform: translate(4px, 4px); box-shadow: 1px 1px 0 var(--ink); }
+.hint { margin: 14px 0 0; font-size: .88rem; opacity: .78; }
+
+.mission { max-width: 800px; margin: 32px auto 0; padding: 20px 25px; border: 3px dashed var(--ink); border-radius: 17px; background: #fff9d9; animation: rise .3s ease-out; }
+.mission-label { display: inline-block; padding: 3px 12px; border-radius: 99px; background: var(--ink); color: white; font-size: .8rem; font-weight: 700; }
+.mission p { margin: 10px 0 0; font-size: 1.15rem; line-height: 1.8; }
+.mission strong { color: #d34e75; }
+.hidden { display: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.idea-bank { max-width: 920px; margin: 38px auto 0; text-align: left; }
+summary { cursor: pointer; font-weight: 900; color: #59697c; }
+.idea-bank > p { font-size: .88rem; color: #59697c; }
+.edit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+label { font-weight: 700; font-size: .9rem; }
+textarea { width: 100%; margin-top: 6px; padding: 9px; resize: vertical; border: 2px solid #aeb9c5; border-radius: 8px; color: var(--ink); font: .9rem/1.5 "Noto Sans TC", sans-serif; }
+.edit-actions { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
+.small-button, .text-button { cursor: pointer; font: 700 .9rem "Noto Sans TC", sans-serif; }
+.small-button { border: 0; border-radius: 8px; padding: 9px 15px; background: var(--ink); color: white; }
+.text-button { border: 0; background: transparent; color: #59697c; text-decoration: underline; }
+
+@media (max-width: 650px) { .app-shell { padding-top: 36px; } .cards, .edit-grid { grid-template-columns: 1fr; } .cards { margin-top: 30px; } .draw-card { min-height: 145px; } }

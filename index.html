@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>發明靈感抽籤機</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">INVENTION IDEA GENERATOR</p>
+        <h1>發明靈感抽籤機 <span aria-hidden="true">✦</span></h1>
+        <p class="intro">每一組卡片都是一個新挑戰！請為抽到的對象，在指定地點與生活情境中，設計一項貼心又有創意的發明。</p>
+      </header>
+
+      <section class="cards" aria-label="抽籤結果">
+        <article class="draw-card person">
+          <div class="card-icon" aria-hidden="true">👤</div>
+          <p>對象</p>
+          <h2 id="person-result">準備好了嗎？</h2>
+        </article>
+        <article class="draw-card place">
+          <div class="card-icon" aria-hidden="true">📍</div>
+          <p>地點</p>
+          <h2 id="place-result">準備好了嗎？</h2>
+        </article>
+        <article class="draw-card situation">
+          <div class="card-icon" aria-hidden="true">💡</div>
+          <p>生活情境</p>
+          <h2 id="situation-result">準備好了嗎？</h2>
+        </article>
+      </section>
+
+      <button id="draw-button" type="button">開始抽籤 <span aria-hidden="true">🎲</span></button>
+      <p class="hint">每次按下按鈕，就會產生一組新的發明任務</p>
+
+      <section id="mission" class="mission hidden" aria-live="polite">
+        <span class="mission-label">你的發明任務</span>
+        <p>請設計一項能幫助 <strong id="mission-person"></strong> 在 <strong id="mission-place"></strong> 面對 <strong id="mission-situation"></strong> 的發明！</p>
+      </section>
+
+      <details class="idea-bank">
+        <summary>編輯抽籤內容</summary>
+        <p>以「每行一個項目」輸入，完成後按下儲存。</p>
+        <div class="edit-grid">
+          <label>對象<textarea id="person-input" rows="7"></textarea></label>
+          <label>地點<textarea id="place-input" rows="7"></textarea></label>
+          <label>生活情境<textarea id="situation-input" rows="7"></textarea></label>
+        </div>
+        <div class="edit-actions">
+          <button id="save-button" class="small-button" type="button">儲存自訂內容</button>
+          <button id="reset-button" class="text-button" type="button">還原預設內容</button>
+        </div>
+      </details>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
